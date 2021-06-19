@@ -5,7 +5,7 @@ import { ITFService } from '../Services/TFService';
 import { ApplicationState } from '../store';
 import * as TFStore from '../store/TF';
 import * as tf from "@tensorflow/tfjs";
-import * as tfvis from "@tensorflow/tfjs-vis";
+import * as tfVis from "@tensorflow/tfjs-vis";
 
 type TensorFlowProps =
     TFStore.TFState &
@@ -60,7 +60,7 @@ class TensorFlow extends React.PureComponent<TensorFlowProps> {
 
     private async getCarsData() {
 
-        const carsDataResponse = await fetch('https://storage.googleapis.com/tfjs-tutorials/carsData1.json');
+        const carsDataResponse = await fetch('https://storage.googleapis.com/tfjs-tutorials/carsData.json');
         const carsData = await carsDataResponse.json();
         const cleaned = carsData.map((car: { Miles_per_Gallon: any; Horsepower: any; }) => ({
             mpg: car.Miles_per_Gallon,
@@ -81,14 +81,13 @@ class TensorFlow extends React.PureComponent<TensorFlowProps> {
                 y: d.mpg,
             }));
 
-        tfvis.render.scatterplot(
+        
+
+         
+        tfVis.render.scatterplot(
             { name: 'Horsepower v MPG' },
             { values },
-            {
-                xLabel: 'Horsepower',
-                yLabel: 'MPG',
-                height: 300
-            }
+            { xLabel: 'Horsepower', yLabel: 'MPG', height: 700 }
         );
 
         // More code will be added below

@@ -55,7 +55,7 @@ var React = require("react");
 var react_redux_1 = require("react-redux");
 var TFStore = require("../store/TF");
 var tf = require("@tensorflow/tfjs");
-var tfvis = require("@tensorflow/tfjs-vis");
+var tfVis = require("@tensorflow/tfjs-vis");
 var TensorFlow = /** @class */ (function (_super) {
     __extends(TensorFlow, _super);
     function TensorFlow() {
@@ -97,7 +97,7 @@ var TensorFlow = /** @class */ (function (_super) {
             var carsDataResponse, carsData, cleaned;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch('https://storage.googleapis.com/tfjs-tutorials/carsData1.json')];
+                    case 0: return [4 /*yield*/, fetch('https://storage.googleapis.com/tfjs-tutorials/carsData.json')];
                     case 1:
                         carsDataResponse = _a.sent();
                         return [4 /*yield*/, carsDataResponse.json()];
@@ -125,11 +125,7 @@ var TensorFlow = /** @class */ (function (_super) {
                             x: d.horsepower,
                             y: d.mpg,
                         }); });
-                        tfvis.render.scatterplot({ name: 'Horsepower v MPG' }, { values: values }, {
-                            xLabel: 'Horsepower',
-                            yLabel: 'MPG',
-                            height: 300
-                        });
+                        tfVis.render.scatterplot({ name: 'Horsepower v MPG' }, { values: values }, { xLabel: 'Horsepower', yLabel: 'MPG', height: 700 });
                         return [2 /*return*/];
                 }
             });
