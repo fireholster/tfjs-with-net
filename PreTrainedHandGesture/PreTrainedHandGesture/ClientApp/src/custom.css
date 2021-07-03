@@ -1,14 +1,30 @@
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 code {
-  color: #E01A76;
+    color: #E01A76;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
+
+/* Handpose CSS */
+
+#videoElement {
+    width: 640px;
+    height: 480px;
+}
+
+#videoContainer {
+    /*margin: 0px auto;
+    width: 660px;
+    height: 500px;
+    border: 10px #333 solid;*/
+}
+
+/* Hndpose CSS */
